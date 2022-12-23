@@ -10,17 +10,20 @@
 <!--<div><object data="userinfo.txt" style="width:500px;height:40px;"> 
 </object></div>-->
 
-<h2><embed src="https://stream.wombo.net/userinfo.txt"></h2>
+<a href="https://dream.ai/booth"><img id="myUser" src="https://samipierre.github.io/twitchbot_webpage/image_name.png" style="width:500px;height:40px;opacity:1;filter:alpha(opacity=40);"></a>
 
 <a href="https://dream.ai/booth"><img id="myImg" src="https://samipierre.github.io/twitchbot_webpage/image_name.png" style="width:500px;height:500px;opacity:1;filter:alpha(opacity=40);"></a>
+<a href="https://dream.ai/booth"><img id="myPrompt" src="https://samipierre.github.io/twitchbot_webpage/image_name.png" style="width:500px;height:40px;opacity:1;filter:alpha(opacity=40);"></a>
 
-<div><object data="prompt.txt" style="width:500px;height:40px;"> 
-</object></div>
+<!--<div><object data="prompt.txt" style="width:500px;height:40px;"> 
+</object></div>-->
 <script>
 	var myTime = 0;
 	function myLoading(){
 		console.log("Loading...");
+		loadUser();
 		loadImage();
+		loadPrompt();
 
 		setTimeout(function() {
 			console.log("Refreshing");
@@ -37,6 +40,26 @@
 		
 		newImage.src = "https://stream.wombo.net/dream.png?" + new Date().getTime();
 		document.getElementById("myImg").src = newImage.src;
+		
+	}
+
+	function loadUser() {
+		// alert("Hi");
+		console.log("Loading User");
+		var newUser = new Image();
+		
+		newUser.src = "https://stream.wombo.net/userinfo.png?" + new Date().getTime();
+		document.getElementById("myUser").src = newUser.src;
+		
+	}
+
+	function loadUser() {
+		// alert("Hi");
+		console.log("Loading Prompt");
+		var newPrompt = new Image();
+		
+		newPrompt.src = "https://stream.wombo.net/prompt.png?" + new Date().getTime();
+		document.getElementById("myPrompt").src = newPrompt.src;
 		
 	}
 
