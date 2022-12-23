@@ -13,6 +13,68 @@
 <div><object data="prompt.txt" style="width:500px;height:40px;"> 
 </object></div>
 
+<!--<div><object data="prompt.txt" style="width:500px;height:40px;"> 
+</object></div>-->
+<script>
+	var myTime = 0;
+	function myLoading(){
+		console.log("Loading...");
+		loadUser();
+		loadImage();
+		loadPrompt();
+
+		setTimeout(function() {
+			console.log("Refreshing");
+			window.location.reload();
+		},10000);
+
+		
+	}
+
+	function loadImage() {
+		// alert("Hi");
+		console.log("Loading Image");
+		var newImage = new Image();
+		
+		newImage.src = "https://stream.wombo.net/dream.png?" + new Date().getTime();
+		document.getElementById("myImg").src = newImage.src;
+		
+	}
+
+	function loadUser() {
+		// alert("Hi");
+		console.log("Loading User");
+		var newUser = new Image();
+		
+		newUser.src = "https://stream.wombo.net/userinfo.png?" + new Date().getTime();
+		document.getElementById("myUser").src = newUser.src;
+		
+	}
+
+	function loadPrompt() {
+		// alert("Hi");
+		console.log("Loading Prompt");
+		var newPrompt = new Image();
+		
+		newPrompt.src = "https://stream.wombo.net/prompt.png?" + new Date().getTime();
+		document.getElementById("myPrompt").src = newPrompt.src;
+		
+	}
+
+	var seconds = 0;
+	var el = document.getElementById('seconds-counter');
+
+	function incrementSeconds() {
+	    seconds += 1;
+	    console.log("You have been here for " + seconds + " seconds.");
+	}
+
+	var cancel = setInterval(incrementSeconds, 1000);
+	var cancel2 = setInterval(loadImage, 1000);
+	var cancel3 = setInterval(loadUser, 1000);
+	var cancel4 = setInterval(loadPrompt, 1000);
+
+</script>
 <!--<p></p>-->
 
 </body>
